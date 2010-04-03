@@ -1,0 +1,30 @@
+Usage
+-----
+
+Usage is very simple:
+
+    runghc transform.hs FILENAME.hs
+
+You will need to do some post-processing:
+
+    * Adding types to all arguments (since that's what they want)
+        (TODO: I bet we could build this in using f (a :: Int) = ...)
+    * Giving all data structure fields names
+
+Doesn't support translating all syntax, known differences include:
+
+    * At-bindings, e.g. a@(Constructor x y)
+    * Let...In...
+    * Lambda functions
+    * Currying
+    * Record syntax
+
+This loses data, in particular:
+
+    * Module information
+    * Imports
+
+I recommend turning off the implicit Prelude (by doing an
+``import Prelude ()``) and then importing functions as necessary.
+The 6.005 course staff might get made at you if you use too much
+Prelude goodness.
