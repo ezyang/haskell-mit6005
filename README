@@ -1,5 +1,8 @@
-Usage
------
+HASKELL TO MIT 6.005 FP PSEUDOCODE TRANSFORMER
+    hacked up by Edward Z. Yang
+
+Hat-tip to the HughesPJ pretty-printer combinators and the original
+implementation of the pretty-printer in Language.Haskell.Pretty.
 
 Usage is very simple:
 
@@ -19,12 +22,25 @@ Known bugs:
 Doesn't support translating all syntax, known differences include:
 
     * At-bindings, e.g. a@(Constructor x y)
+        You can probably get away by telling course staff what you mean.
     * Let...In...
+        You can probably get away by telling course staff what you mean.
     * Lambda functions
+        Separate this out to a helper function.
     * Currying
+        Just don't.  Currying is hard to understand to the uninitiated.
     * Record syntax
+        Haskell relies on positional arguments for simple
+        data-structures; 6.005 wants you to be explicit.  In theory
+        record syntax gets you this, in practice you don't actually want
+        to muck up your Haskell code.  Fix this manually.
+    * Do-notation
+        Just don't use monads.
+    * User defined infix operators
+        Just don't.
 
-This loses data, in particular:
+This loses data (that the 6.005 staff doesn't care about), in
+particular:
 
     * Module information
     * Imports
