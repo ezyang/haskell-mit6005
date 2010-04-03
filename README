@@ -24,9 +24,10 @@ Known bugs:
 Doesn't support translating all syntax, known differences include:
 
     * At-bindings, e.g. a@(Constructor x y)
-        You can probably get away by telling course staff what you mean.
     * Let...In...
-        You can probably get away by telling course staff what you mean.
+    * Case...Of...
+        For these three, you can probably get away by telling course
+        staff what you mean.
     * Lambda functions
         Separate this out to a helper function.
     * Currying
