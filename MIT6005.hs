@@ -29,6 +29,7 @@ import Language.Haskell.Syntax
 
 import qualified Text.PrettyPrint as P
 import Data.List (intercalate, intersperse)
+import Data.Char (toUpper)
 
 infixl 5 $$$
 
@@ -499,6 +500,7 @@ instance Pretty HsType where
 		| a == list_tycon = text "List<" <> pretty b <> text ">"		-- special case
 		| otherwise = parensIf (p > prec_btype) $
 			pretty a <> text "<" <> ppHsAType b <> text ">"
+	prettyPrec _ (HsTyVar (HsIdent s)) = pretty (HsIdent (map toUpper s))
 	prettyPrec _ (HsTyVar name) = pretty name
 	prettyPrec _ (HsTyCon name) = pretty name
 

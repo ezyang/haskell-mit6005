@@ -20,6 +20,8 @@ Known bugs:
 
     * Doesn't handle the pattern x:y:xs correctly, so you need to
       hint the right fixness with x:(y:xs)
+    * Doesn't handle type signatures for higher order functions
+      correctly
 
 Doesn't support translating all syntax, known differences include:
 
@@ -50,5 +52,5 @@ particular:
 
 I recommend turning off the implicit Prelude (by doing an
 ``import Prelude ()``) and then importing functions as necessary.
-The 6.005 course staff might get made at you if you use too much
+The 6.005 course staff might get mad at you if you use too much
 Prelude goodness.
