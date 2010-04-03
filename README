@@ -13,6 +13,8 @@ You will need to do some post-processing:
     * Adding types to all arguments (since that's what they want)
         (TODO: I bet we could build this in using f (a :: Int) = ...)
     * Giving all data structure fields names
+    * Add comments (the parser doesn't build syntax for them, so we
+      can't give them back to you.)
 
 Known bugs:
 
