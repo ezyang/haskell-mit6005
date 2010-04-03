@@ -11,6 +11,11 @@ You will need to do some post-processing:
         (TODO: I bet we could build this in using f (a :: Int) = ...)
     * Giving all data structure fields names
 
+Known bugs:
+
+    * Doesn't handle the pattern x:y:xs correctly, so you need to
+      hint the right fixness with x:(y:xs)
+
 Doesn't support translating all syntax, known differences include:
 
     * At-bindings, e.g. a@(Constructor x y)
